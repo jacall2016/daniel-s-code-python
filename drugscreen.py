@@ -13,6 +13,7 @@ class Analysis:
                  phl_bl1, 
                  yemk_vl2, 
                  yemk_bl1):
+        #prior columns
         self.well_number = well_number
         self.total_count = total_count
         self.phl_count = phl_count
@@ -23,8 +24,11 @@ class Analysis:
         self.phl_bl1 = phl_bl1
         self.yemk_vl2 = yemk_vl2
         self.yemk_bl1 = yemk_bl1
+        #created columns
         self.pHL_VL2_BL1 = self.calculate_pHL_VL2_BL1()
         self.yemk_vl2_bl1 = self.calculate_YEML_VL2_dividedby_BL1()
+        #these columns are populated not at the point of creation but later
+        #because they require all columns to have been created before they can be populated
         self.relative_well_number = 0
         self.slope_corrected_phl_vl2_bl1 = 0
         self.slope_corrected_yemk_vl2_bl1 = 0
